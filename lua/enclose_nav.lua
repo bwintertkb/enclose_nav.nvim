@@ -15,7 +15,7 @@ function enclose_nav()
 	local line = vim.api.nvim_buf_get_lines(0, cursor_pos[1]-1, cursor_pos[1], false)[1]
 	-- flag indicating if we are inside enclosing parens or brackets, or other supported symbol
 	-- iterate over the characters in the line
-	for i = cursor_pos[2] + 1, #line do
+	for i = cursor_pos[2] + 2, #line do
 		local char = line:sub(i, i)
 		if inside_list(ENCLOSING_SYMBOL, char) then
 			-- move the cursor to the position of the closing token 
