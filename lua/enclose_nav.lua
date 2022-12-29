@@ -25,7 +25,9 @@ function enclose_nav()
 	end
 end
 
-function setup()
+M = {}
+
+M.setup = function()
 	-- Set the keybinding for the enclose_nav function in insert mode
 	vim.api.nvim_set_keymap("i", "<C-e>", "<ESC>:lua enclose_nav()<CR>a", {noremap = true})
 end
